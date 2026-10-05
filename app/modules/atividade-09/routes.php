@@ -1,18 +1,8 @@
 <?php
 
-require_once __DIR__ . '/controller.php';
+require_once __DIR__ . '/../../core/router.php';
+require_once __DIR__ . '/Controller.php';
 
-Router::get(
-    '/novo-usuario',
-    [UsuarioController::class, 'novoUsuario']
-);
-
-Router::post(
-    '/cadastrar-usuario',
-    [UsuarioController::class, 'cadastrarUsuario']
-);
-
-Router::get(
-    '/buscar-usuario',
-    [UsuarioController::class, 'buscarUsuario']
-);
+// Registra as rotas usando os métodos estáticos do Router
+Router::get('/buscarUsuario, [UsuarioController::class, 'showBuscarUsuario']);
+Router::get('/novoUsuario, [UsuarioController::class, 'showNovoUsuario']);
